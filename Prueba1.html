@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atención y Memoria</title>
+    <style>
+        #P2{
+        position: page;
+        background-color: lightslategray;
+        background-repeat: no-repeat;
+        background-size:100%;
+        }
+        #logo{
+        display: flex;
+        margin-left:1200px;
+        }
+        #ejercicio2{
+          text-align: justify;
+          font-family: "American Typewriter";
+          background-color: #ffffff;
+          border-radius:1px;
+          color: black;
+          font-size: 20px;
+          padding:10px;
+          margin: 45px;
+          margin-right: 100px;
+          margin-left:650px;
+        }
+        #infoizquierda{
+        margin-right:850px;
+            margin-left: 90px;
+        margin-top:150px;
+        }
+        #boton_siguiente{
+          border: 3px solid #000000; /*anchura, estilo y color borde*/
+          padding: 10px; /*espacio alrededor texto*/
+          background-color: #ffffff; /*color botón*/
+          color: #000000; /*color texto*/
+          text-decoration: none; /*decoración texto*/
+          font-family: "American Typewriter"; /*tipografía texto*/
+          font-size: 20px;
+          margin-left: 1150px;
+          font-weight: bold;
+          margin-top:70px;
+          margin-bottom: 50px;
+        }
+        #botonguardar{
+           margin-left: 1150px;
+          font-weight: bold;
+          margin-top:50px;
+            margin-left: 950px;
+
+        }
+        #boton_guardar{
+            text-decoration: none; /*para quitar el subrayado del botón*/
+            background-color: #ffffff; /*color botón*/
+            color: #000000; /*color texto*/
+            font-family:"American Typewriter"; /*tipografía texto*/
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        #ejercicio1{
+          text-align: justify;
+          font-family: "American Typewriter";
+          background-color: #ffffff;
+          border-radius:1px;
+          color: black;
+          font-size: 20px;
+          padding:10px;
+          margin: 45px;
+          margin-top: -400px;
+          margin-left: 650px;
+          margin-right: 100px;
+        }
+        #indicaciones {
+            text-align: justify;
+            font-family: "American Typewriter";
+            text-decoration: none;
+            background-color: #ffffff;
+            border-radius:1px;
+            color: black;
+            font-size: 19px;
+            padding:10px;
+        }
+        #horas {
+            align-content: center;
+            margin-left: 90px;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div id="P2">
+    <div id="logo">
+      <p><img src="../Imagenes/ceu.png" height="110" width="200"></p>
+    </div>
+    <div id="infoizquierda">
+      <div id="indicaciones">
+          <p>Tomando como referencia la metodología del conocido “Seven Minutes Test”, se crea esta primera parte cuyas pruebas están enfocadas a tener un tiempo de realización breve y ser de valoración objetiva. <br> Consta de dos ejercicios en los cuales se evaluará la atención y el sentido de la orientación de la persona para una correcta detención de la enfermedad de Alzheimer.  </p>
+      </div>
+      <div id="horas">
+          <br>
+          <label for="comienzo"> Hora de comienzo: </label>
+          <input type="text" id="comienzo" name="comienzo">
+          <br>
+          <label for="finalizacion"> Hora de finalización: </label>
+          <input type="text" id="finalizacion" name="finalización">
+      </div>
+    </div>
+    <div id="ejercicio1">
+        <div>
+            <p> PALABRA Y COLOR <br> Visualice la imagen: en ella se muestran los nombres de los colores en distintas tonalidades.<br> Sin tener en cuenta los nombres dados, escoja la secuencia de nombres de las tonalidades que aparecen de izquierda a derecha. </p>
+        </div>
+        <div>
+            <p><img src="../Imagenes/colores.jpg" height="100" width="600"></p>
+        </div>
+        <div>
+            <label for="respuesta"> </label>
+            <select name="respuesta" id="respuesta">
+            <option value="errónea">Rojo, verde, amarillo, naranja, azul y rojo</option>
+            <option value="correcta">Naranja, rojo, morado, verde, azul y rosa</option>
+            <option value="errónea">Rojo, verde, amarillo, naranja, azul y rosa</option>
+        </select><br>
+        </div>
+    </div>
+    <div id="ejercicio2">
+        <div>
+            <p> POSICIONES <br> Observe la imagen y sitúe los cuadrados coloreados.<br> Escoja la opción que mejor describa las posiciones de esos cuadrados. </p>
+        </div>
+        <div>
+            <p><img src="../Imagenes/posiciones.jpg" height="150" width="600"></p>
+        </div>
+        <div>
+            <label for="respuesta2"> </label>
+            <select name="respuesta2" id="respuesta2">
+            <option value="errónea">Izquierda y arriba, derecha y abajo, en medio, derecha y arriba</option>
+            <option value="correcta">Derecha y arriba, izquierda y abajo, en medio, izquierda y arriba</option>
+            <option value="errónea">Derecha y abajo, izquierda y arriba, en medio, izquierda y arriba</option>
+        </select><br>
+        </div>
+    </div>
+    <div id="botonguardar">
+        <button><a id ="boton_guardar" href="" download="PruebaAtenciónyOrientación.txt">Guardar</a></button>
+        <script>
+                var respuesta = document.querySelector("#respuesta");
+                var respuesta2 = document.querySelector("#respuesta2");
+                var comienzo= document.querySelector("#comienzo")
+                var finalizacion = document.querySelector ("#finalizacion")
+                var boton = document.querySelector("#boton_guardar");
+
+                finalizacion.addEventListener("change", function(){
+                var f = function(){
+                boton.setAttribute("href", "data:text/paint; utf-8," +"La prueba de atención y memoria comenzó a las " +comienzo.value +"y finalizó a las " +finalizacion.value +".La respuesta del primer ejercicio es " + respuesta.value + " y la del segundo ejercicio es " + respuesta2.value + ".");
+                }
+                return f(), f;
+                } () ) ;
+
+        </script>
+    </div>
+    <div id="botonsiguiente">
+      <button id="boton_siguiente"><a href="Prueba2.html">SIGUIENTE</a></button>
+    </div>
+
+  </div>
+</body>
+</html>

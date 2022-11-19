@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudio del Alzheimer</title>
+    <style>
+        #P1{
+        position: page;
+        background-image: url("../Imagenes/Fondopagina1.jpg");
+        background-repeat: no-repeat;
+        background-size:120%;
+            background-color: lightslategray;
+        }
+        #logo{
+        display: flex;
+        margin-left:1200px;
+        }
+        #ficha{
+            color:#ffffff;
+            font-size: 17px;
+            font-family:"American Typewriter";
+            margin-left: 800px ;
+        }
+        #imagen_izquierda{
+        margin-right:850px;
+            margin-left: 90px;
+        margin-top:120px;
+        }
+        #boton_comenzar{
+          border: 3px solid #000000; /*anchura, estilo y color borde*/
+          padding: 20px; /*espacio alrededor texto*/
+          background-color: #ffffff; /*color botón*/
+          color: #000000; /*color texto*/
+          text-decoration: none; /*decoración texto*/
+          font-family: "American Typewriter"; /*tipografía texto*/
+          font-size: 25px;
+          margin-left: 650px;
+          font-weight: bold;
+          margin-top:70px;
+          margin-bottom: 50px;
+        }
+        #boton_guardar{
+            text-decoration: none; /*para quitar el subrayado del botón*/
+            background-color: #ffffff; /*color botón*/
+            color: #000000; /*color texto*/
+            font-family:"American Typewriter"; /*tipografía texto*/
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        #info1{
+          text-align: justify;
+          font-family: "American Typewriter";
+          background-color: #ffffff;
+          border-radius:1px;
+          color: black;
+          font-size: 20px;
+          padding:10px;
+          margin: 45px;
+          margin-top: -450px;
+          margin-left: 650px;
+          margin-right: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div id="P1">
+    <div id="logo">
+      <p><img src="../Imagenes/ceu.png" height="110" width="200"></p>
+    </div>
+    <div id="imagen_izquierda">
+      <p><img src="../Imagenes/Imagen_izquierda.png" height="470" width="800"></p>
+    </div>
+    <div id="info1">
+    <p>La enfermedad de Alzheimer es un trastrorno neurológico que hace que el cerebro se encoja y que las neuronas cerebrales mueran. <br> Es la causa más común de demencia y quien la padece al final resulta incapaz de realizar las tareas cotidianas de forma independiente. <br> IS YOU se crea con el objetivo de retrasar su inicio y evitar su desarrollo.</p>
+    </div>
+    <div id="ficha">
+        <label for="edad"> Edad:</label>
+        <input type="number" id="edad" name="edad">
+        <label for="genero"> Género:</label>
+        <select name="genero" id="genero">
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+        </select><br><br>
+        <button><a id ="boton_guardar" href="" download="FichaPaciente.txt">Guardar</a></button>
+        <script>
+                var edad = document.querySelector("#edad");
+                var genero = document.querySelector("#genero");
+                var boton = document.querySelector("#boton_guardar");
+
+                genero.addEventListener("change", function(){
+                var f = function(){
+                boton.setAttribute("href", "data:text/paint; utf-8," +"El realizador de la prueba tiene  " + edad.value + "   " + "años y es de género " + genero.value );
+                }
+                return f(), f;
+                } () ) ;
+
+        </script>
+    </div>
+    <div>
+      <button id="boton_comenzar"><a href="Prueba1.html">COMENZAR</a></button>
+    </div>
+
+  </div>
+</body>
+</html>
+
+
+

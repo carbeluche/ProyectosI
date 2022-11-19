@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Razonamiento</title>
+    <style>
+        #P3{
+        position: page;
+        background-color: lightslategray;
+        background-repeat: no-repeat;
+        background-size:110%;
+        }
+        #logo{
+        display: flex;
+        margin-left:1200px;
+        }
+
+        #infoizquierda{
+        margin-right:850px;
+        margin-left: 90px;
+        margin-top: 90px;
+        }
+
+        #derecha{
+          text-align: justify;
+          font-family: "American Typewriter";
+          background-color: #ffffff;
+          border-radius:1px;
+          color: black;
+          font-size: 20px;
+          padding:10px;
+          margin-left: 650px;
+          margin-right: 100px;
+          margin-top: -900px;
+
+        }
+        #indicaciones {
+            text-align: justify;
+            font-family: "American Typewriter";
+            text-decoration: none;
+            background-color: #ffffff;
+            border-radius:1px;
+            color: black;
+            font-size: 19px;
+            padding:10px;
+        }
+
+        #imagencerebro{
+            margin-right: 400px;
+            margin-left: 40px ;
+
+        }
+        #botones {
+          text-align: justify;
+          font-family: "American Typewriter";
+          border-radius:1px;
+          color: black;
+          font-size: 40px;
+          padding:20px;
+          margin-left: 920px;
+          margin-right: 100px;
+
+        }
+        #boton_guardar{
+            text-decoration: none; /*para quitar el subrayado del botón*/
+            background-color: #ffffff; /*color botón*/
+            color: #000000; /*color texto*/
+            font-family:"American Typewriter"; /*tipografía texto*/
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            margin-right: 10px;
+            margin-left: 10px;
+
+        }
+        #boton_finalizar{
+            text-decoration: none;
+            background-color: #ffffff; /*color botón*/
+            color: #000000; /*color texto*/
+            font-family:"American Typewriter"; /*tipografía texto*/
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            margin-right: 60px;
+            margin-left: 230px;
+            border: 3px solid #000000;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div id="P3">
+
+    <div id="logo">
+      <p><img src="../Imagenes/ceu.png" height="110" width="200"></p>
+    </div>
+
+    <div id="infoizquierda">
+      <div id="indicaciones">
+          <p>Esta última prueba se basa en la “Alzheimer´s Disease Assessment Scale-Cognitive”, que tiene como objetivo evaluar las alteraciones cognitivas que pueden desarrollar las personas que padecen la enfermedad de Alzheimer. <br> Es una prueba más larga sin limitación de tiempo, que se divide en un ejercicio de lenguaje y otro de razonamiento numérico. </p>
+      </div >
+      <div id="imagencerebro">
+          <p><img src="../Imagenes/cerebro.jpg" height="510" width="400"> <br> <br> <br></p>
+      </div>
+    </div>
+
+    <div id="derecha">
+        <div id="ejercicio1">
+        <div>
+            <p> LENGUAJE <br> Lea el siguiente texto y complete los huecos con la opción adecuada en cada caso. <br> Seleccione la opción que sea correcta. </p>
+        </div>
+        <div id="texto">
+            <p><img src="../Imagenes/Texto.png" height="360" width="650"></p>
+        </div>
+        <div>
+            <label for="respuesta"> </label>
+            <select name="respuesta" id="respuesta">
+            <option value="errónea">a la que, aunque, este, venideras, inversión, desdecir, pierna</option>
+            <option value="correcta">al que, a pesar de, esté, entendederas, inversion, desdeñar, pie </option>
+            <option value="errónea">a la que, aunque, sea, venideras, inversión, desdecir, pierna</option>
+            </select>
+        </div>
+        </div>
+        <div id="ejercicio2">
+        <div>
+            <p> SERIES <br> Observe las siguientes series y escoja el número correspondiente con que el debe continuar cada una.<br> Escoja la opción correcta para las tres series. </p>
+        </div>
+        <div>
+            <p><img src="../Imagenes/series.png" height="150" width="400"></p>
+        </div>
+        <div>
+            <label for="respuesta2"> </label>
+            <select name="respuesta2" id="respuesta2">
+            <option value="errónea"> 8 , 7 , 40</option>
+            <option value="correcta"> 7 , 8 , 42</option>
+            <option value="errónea"> 7 , 8 , 40</option>
+        </select><br>
+        </div>
+        </div>
+    </div>
+    <div id="botones">
+        <div>
+        <button><a id ="boton_guardar" href="" download="PruebaRazonamiento.txt">Guardar</a></button>
+        <script>
+                var respuesta = document.querySelector("#respuesta");
+                var respuesta2 = document.querySelector("#respuesta2");
+                var boton = document.querySelector("#boton_guardar");
+
+                respuesta2.addEventListener("change", function(){
+                var f = function(){
+                boton.setAttribute("href", "data:text/paint; utf-8," +"En la prueba de razonamiento la respuesta del primer ejercicio es " + respuesta.value + " y la del segundo ejercicio es " + respuesta2.value + ".");
+                }
+                return f(), f;
+                } () ) ;
+        </script>
+        </div>
+        <div>
+            <button id="boton_finalizar"><a href="Final.html">FINZALIZAR</button>
+        </div>
+
+    </div>
+
+
+  </div>
+
+</body>
+</html>
